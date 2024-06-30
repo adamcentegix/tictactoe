@@ -35,7 +35,8 @@ col = int(input(f"Enter column (0-2) for your {current_player}: "))
             winner = check_winner(board)
             if winner:
                 print_board(board)
-                print(f"Player {winner} wins!")
+print(f"
+Congratulations! Player {winner} wins!")
                 break
             elif is_full(board):
                 print_board(board)
