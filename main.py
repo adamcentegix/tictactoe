@@ -29,7 +29,7 @@ def play_game():
         print_board(board)
         row = int(input(f"Player {current_player}, enter row (0-2): "))
 row = int(input(f"Enter row (0-2) for your {current_player}: "))
-
+col = int(input(f"Enter column (0-2) for your {current_player}: "))
         if board[row][col] == ' ':
             board[row][col] = current_player
             winner = check_winner(board)
