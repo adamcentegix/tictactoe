@@ -46,7 +46,7 @@ Congratulations! Player {winner} wins!")
 print("
 Oops! That cell is already occupied. Please try again.")
             print("That cell is already occupied. Try again.")
-
+print("Welcome to Tic Tac Toe!")
 if __name__ == "__main__":
     play_game()
 
