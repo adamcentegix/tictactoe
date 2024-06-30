@@ -43,7 +43,8 @@ Congratulations! Player {winner} wins!")
                 print("It's a tie!")
                 break
             current_player = 'O' if current_player == 'X' else 'X'
-        else:
+print("
+Oops! That cell is already occupied. Please try again.")
             print("That cell is already occupied. Try again.")
 
 if __name__ == "__main__":
