@@ -48,6 +48,6 @@ Oops! That cell is already occupied. Please try again.")
             print("That cell is already occupied. Try again.")
 print("Welcome to Tic Tac Toe!")
 print("Player X goes first.
-")
+play_game()
     play_game()
 
