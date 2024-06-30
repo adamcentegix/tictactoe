@@ -1,9 +1,26 @@
 # Tic Tac Toe game v5 in Python
 
+def print_title():
+    print("""
+    _____ _     _____         _____
+   \|_   _(_)   \|_   _\|_ _  __\|_   _\|__   ___
+     \| \| \| \|     \| \|/ _` \|/ __\|\| \|/ _ \ / _      \| \| \| \|     \| \| (_\| \| (__ \| \| (_) \|  __/
+     \|_\| \|_\|     \|_\|\__,_\|\___\|\|_\|\___/ \___\|
+    """)
+
+
 def print_board(board):
-    for row in board:
-        print(" | ".join(row))
-        print("-" * 9)
+    print("""
+       0   1   2
+     ┌───┬───┬───┐
+   0 │ {} │ {} │ {} │
+     ├───┼───┼───┤
+   1 │ {} │ {} │ {} │
+     ├───┼───┼───┤
+   2 │ {} │ {} │ {} │
+     └───┴───┴───┘
+    """.format(*[cell for row in board for cell in row]))
+
 
 def check_winner(board):
     # Check rows, columns, and diagonals
@@ -18,13 +35,16 @@ def check_winner(board):
         return board[0][2]
     return None
 
+
 def is_full(board):
     return all(cell != ' ' for row in board for cell in row)
+
 
 def play_game():
     board = [[' ' for _ in range(3)] for _ in range(3)]
     current_player = 'X'
 
+    print_title()
     while True:
         print_board(board)
         row = int(input(f"Player {current_player}, enter row (0-2): "))
@@ -36,6 +56,18 @@ def play_game():
             if winner:
                 print_board(board)
                 print(f"Player {winner} wins!")
+                print("""
+                 ___________
+                '._==_==_=_.'
+                .-\:      /-.
+               \| (\|:.     \|) \|
+                '-\|:.     \|-'
+                  \::.    /
+                   '::. .'
+                     ) (
+                   _.' '._
+                  `"""""""`
+                """)
                 break
             elif is_full(board):
                 print_board(board)
@@ -45,6 +77,6 @@ def play_game():
         else:
             print("That cell is already occupied. Try again.")
 
+
 if __name__ == "__main__":
     play_game()
-
