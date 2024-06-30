@@ -28,7 +28,7 @@ def play_game():
     while True:
         print_board(board)
         row = int(input(f"Player {current_player}, enter row (0-2): "))
-        col = int(input(f"Player {current_player}, enter column (0-2): "))
+row = int(input(f"Enter row (0-2) for your {current_player}: "))
 
         if board[row][col] == ' ':
             board[row][col] = current_player
