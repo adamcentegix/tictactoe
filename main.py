@@ -1,4 +1,4 @@
-# Tic Tac Toe game v5 in Python
+# Tic Tac Toe game v6 in Python
 
 def print_title():
     print("""
@@ -42,20 +42,25 @@ def is_full(board):
 
 def play_game():
     board = [[' ' for _ in range(3)] for _ in range(3)]
+    player_x = input("Enter name for Player X: ")
+    player_o = input("Enter name for Player O: ")
     current_player = 'X'
+    current_name = player_x
 
     print_title()
     while True:
         print_board(board)
-        row = int(input(f"Player {current_player}, enter row (0-2): "))
-        col = int(input(f"Player {current_player}, enter column (0-2): "))
+        row = int(
+            input(f"{current_name} ({current_player}), enter row (0-2): "))
+        col = int(
+            input(f"{current_name} ({current_player}), enter column (0-2): "))
 
         if board[row][col] == ' ':
             board[row][col] = current_player
             winner = check_winner(board)
             if winner:
                 print_board(board)
-                print(f"Player {winner} wins!")
+                print(f"{current_name} ({winner}) wins!")
                 print("""
                  ___________
                 '._==_==_=_.'
@@ -74,6 +79,7 @@ def play_game():
                 print("It's a tie!")
                 break
             current_player = 'O' if current_player == 'X' else 'X'
+            current_name = player_o if current_player == 'O' else player_x
         else:
             print("That cell is already occupied. Try again.")
 
